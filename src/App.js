@@ -1,32 +1,59 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
-import Domain from "../src/domain";
+import Domain from "./domain";
 import Flower from "./flower";
 import { Fruit } from "./fruit";
+import { connect } from "react-redux";
 
-function App() {
-  return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        {/* <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header> */}
+        <Domain name="maryam" />
+        <Flower flowerName="zanbagh" />
+        {Fruit("apple")}
+        <h1>welcome Redux {this.props.count}</h1>
+        <button
+          className="btn btn-secondary"
+          onClick={this.props.handleIncrementClick}
         >
-          Learn React
-        </a>
-      </header> */}
-      <Domain name="maryam" />
-      <Flower flowerName="zanbagh" />
-      {Fruit("apple")}
-    </div>
-  );
+          Increment
+        </button>
+        <button
+          className="btn btn-warning"
+          onClick={this.props.handleDecrementClick}
+        >
+          Decrement
+        </button>
+      </div>
+    );
+  }
 }
+const mapStateToProps = (state) => {
+  return {
+    count: state,
+  };
+};
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
+    handleDecrementClick: () => dispatch({ type: "DECREMENT" }),
+  };
+};
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
