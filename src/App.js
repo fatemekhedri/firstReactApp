@@ -5,6 +5,8 @@ import Domain from "./domain";
 import Flower from "./flower";
 import { Fruit } from "./fruit";
 import { connect } from "react-redux";
+import { Tv, Internet } from "./Tv";
+import styles from "./App.module.scss";
 
 class App extends React.Component {
   render() {
@@ -24,10 +26,13 @@ class App extends React.Component {
             Learn React
           </a>
         </header> */}
-        <Domain name="maryam" />
-        <Flower flowerName="zanbagh" />
+        <Domain />
+        {/* <Flower flowerName="zanbagh" />
         {Fruit("apple")}
-        <h1>welcome Redux {this.props.count}</h1>
+        <div className={styles["class-test"]}>parent class test</div> */}
+        {/* {Tv()} */}
+        {/* {Internet()} */}
+        {/* <h1>welcome Redux {this.props.count}</h1>
         <button
           className="btn btn-secondary"
           onClick={this.props.handleIncrementClick}
@@ -39,7 +44,7 @@ class App extends React.Component {
           onClick={this.props.handleDecrementClick}
         >
           Decrement
-        </button>
+        </button> */}
       </div>
     );
   }
