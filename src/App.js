@@ -1,12 +1,13 @@
 import React from "react";
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import Domain from "./domain";
-import Flower from "./flower";
-import { Fruit } from "./fruit";
-import { connect } from "react-redux";
-import { Tv, Internet } from "./Tv";
-import styles from "./App.module.scss";
+// import Flower from "./flower";
+// import { Fruit } from "./fruit";
+// import { connect } from "react-redux";
+// import { Tv, Internet } from "./Tv";
+// import styles from "./App.module.scss";
+import Tree from "./tree";
 
 class App extends React.Component {
   render() {
@@ -26,7 +27,8 @@ class App extends React.Component {
             Learn React
           </a>
         </header> */}
-        <Domain />
+        {/* <Domain /> */}
+        <Tree />
         {/* <Flower flowerName="zanbagh" />
         {Fruit("apple")}
         <div className={styles["class-test"]}>parent class test</div> */}
@@ -49,16 +51,17 @@ class App extends React.Component {
     );
   }
 }
-const mapStateToProps = (state) => {
-  return {
-    count: state,
-  };
-};
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
-    handleDecrementClick: () => dispatch({ type: "DECREMENT" }),
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     count: state,
+//   };
+// };
+// const mapDispatchToProps = (dispatch) => {
+//   return {
+//     handleIncrementClick: () => dispatch({ type: "INCREMENT" }),
+//     handleDecrementClick: () => dispatch({ type: "DECREMENT" }),
+//   };
+// };
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default App;
